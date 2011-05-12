@@ -1,4 +1,5 @@
 require File.join(File.dirname(__FILE__), 'room')
+require File.join(File.dirname(__FILE__), 'item')
 
 describe Room do
 	it "should have a description" do
@@ -18,6 +19,9 @@ describe Room do
 	end
 
 	it "should have items" do
-		pending
+		r = Room.new
+		i = Item.new
+		r.items = [i]
+		r.should_not be_nil
 	end
 end
