@@ -8,14 +8,19 @@ lake.info = "You see a trail leading north into the forest."
 
 forest = Room.new
 forest.description = "You are in a forest, surrounded by lush trees."
-forest.info = "Your house is to the west."
+forest.info = "Your house is to the west. The mountains are to the east."
 
 house = Room.new
 house.description = "You're by your house! Home, sweet home."
 house.info = "It's your house. You love this place. Back to the east is the forest."
 
+mountains = Room.new
+mountains.description = "You've hiked up into the mountains. From here you can see the whole valley that you live in."
+mountains.info = "The mountains are beautiful. Down the mountain and to the west is the forest."
+
 lake.rooms = {:north => forest}
-forest.rooms = {:south => lake, :west => house}
+forest.rooms = {:south => lake, :west => house, :east => mountains}
+mountains.rooms = {:west => forest}
 house.rooms = {:east => forest}
 
 a = Avatar.new(lake)
