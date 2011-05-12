@@ -65,7 +65,7 @@ You can say "look" to get more information about your surroundings.
 
 You can say "go <direction>" to walk somewhere. You can go east, west, north, or south.
 
-You can say "exit" or "quit" to exit the game.
+You can say "exit" or "quit" to leave the game.
 HELP
 	end
 end

@@ -45,7 +45,7 @@ end
 
 def print_welcome
 	puts <<WELCOME
-Welcome to Crystal Lake! Have fun and explore.
+Welcome to Crystal Lake! Have fun and explore. (Type "help" if you get stuck).
 WELCOME
 end
 
