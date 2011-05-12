@@ -25,12 +25,16 @@ class InputController
 				@current_message = "Sorry, you cannot go #{direction} from here."
 			end
 		end	
+
+		if tokens.first == "look"
+			@current_message = avatar.location.info
+		end
 	end
 
 	def valid?(input)
 		tokens = input.split
 		result = false
-		if tokens.first == "exit" && tokens.size == 1
+		if tokens.first == "look" && tokens.size == 1
 			result = true
 		elsif tokens.size == 2
 			result = true
