@@ -18,12 +18,13 @@ house.rooms = {:east => forest}
 a = Avatar.new(lake)
 ctl = InputController.new
 ctl.avatar = a
+ctl.initialize_message
 
 def repl(ctl)
 	puts ctl.current_message
 	puts 
 	print "> "
-	input = gets.chomp.to_sym
+	input = gets.chomp
 	ctl.evaluate(input)
 	repl(ctl)
 end

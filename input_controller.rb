@@ -10,16 +10,19 @@ class InputController
 	end
 
 	def evaluate(input)
-		tokens = input.split.map(&:to_sym)
+		tokens = input.split
 		unless valid?(input)
 			@current_message = "Sorry, that is not a valid command."
 			return
 		end		
 
-		if tokens.first == :go
-			if avatar.can_move?(tokens.last)
-				avatar.move(tokens.last)
+		if tokens.first == "go"
+			direction = tokens.last.to_sym
+			if avatar.can_move?(direction)
+				avatar.move(direction)
+				@current_message = avatar.location.description
 			else
+				@current_message = "Sorry, you cannot go #{direction} from here."
 			end
 		end	
 	end
