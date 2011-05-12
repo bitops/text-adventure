@@ -1,5 +1,6 @@
 require File.join(File.dirname(__FILE__), 'avatar')
 require File.join(File.dirname(__FILE__), 'room')
+require File.join(File.dirname(__FILE__), 'input_controller')
 
 lake = Room.new
 lake.description = "You are standing by a beautiful lake."
@@ -15,19 +16,17 @@ forest.rooms = {:south => lake, :west => house}
 house.rooms = {:east => forest}
 
 a = Avatar.new(lake)
+ctl = InputController.new
+ctl.avatar = a
 
-def repl(avatar)
-	puts avatar.location.description
+def repl(ctl)
+	puts ctl.current_message
 	puts 
 	print "> "
 	input = gets.chomp.to_sym
-	if avatar.can_move?(input)
-		avatar.move(input)
-	else
-		puts "Sorry, can't go #{input} from here."
-	end
-	repl(avatar)
+	ctl.evaluate(input)
+	repl(ctl)
 end
 
-repl(a)
+repl(ctl)
 	
