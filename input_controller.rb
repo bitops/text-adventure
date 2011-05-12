@@ -16,7 +16,9 @@ class InputController
 			return
 		end		
 
-		if tokens.first == "go"
+		command = tokens.first
+
+		if command == "go"
 			direction = tokens.last.to_sym
 			if avatar.can_move?(direction)
 				avatar.move(direction)
@@ -26,19 +28,44 @@ class InputController
 			end
 		end	
 
-		if tokens.first == "look"
+		if command == "look"
 			@current_message = avatar.location.info
+		end
+		
+		if command == "help"
+			@current_message = help_message
+		end
+
+		if command == "exit" || command == "quit"
+			puts "Thank you for playing!"
+			exit(0)
 		end
 	end
 
 	def valid?(input)
 		tokens = input.split
 		result = false
-		if tokens.first == "look" && tokens.size == 1
+		if valid_commands.include?(tokens.first) && tokens.size == 1
 			result = true
 		elsif tokens.size == 2
 			result = true
 		end
 		result
+	end
+
+	def valid_commands
+		@commands ||= %w(look exit quit help)
+	end
+
+	def help_message
+		help = <<HELP
+Crystal Lake is a simple adventure.
+
+You can say "look" to get more information about your surroundings.
+
+You can say "go <direction>" to walk somewhere. You can go east, west, north, or south.
+
+You can say "exit" or "quit" to exit the game.
+HELP
 	end
 end

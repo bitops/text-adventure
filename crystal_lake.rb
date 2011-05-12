@@ -37,5 +37,12 @@ def repl(ctl)
 	repl(ctl)
 end
 
+def print_welcome
+	puts <<WELCOME
+Welcome to Crystal Lake! Have fun and explore.
+WELCOME
+end
+
+print_welcome
 repl(ctl)
 	
