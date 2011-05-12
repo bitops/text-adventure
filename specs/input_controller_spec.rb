@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), 'input_controller')
+require File.join(File.dirname(__FILE__), '..', 'input_controller')
 
 describe InputController do
 	it "should determine if input is valid" do

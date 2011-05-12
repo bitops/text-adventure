@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "avatar")
+require File.join(File.dirname(__FILE__), "..", "avatar")
 
 describe Avatar do
 	it "should have a location, a room" do	

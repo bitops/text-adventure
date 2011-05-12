@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "item")
+require File.join(File.dirname(__FILE__), "..", "item")
 
 describe Item do
 	it "should have a description" do
