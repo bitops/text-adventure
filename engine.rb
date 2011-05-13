@@ -11,7 +11,7 @@ ARGV.clear
 loader = GameDataLoader.new
 locations = loader.load_location_data(location_data_file)
 messages = loader.load_message_data(message_data_file)
-lake = locations.find {|location| location.handle == "lake"} 
+lake = locations.find {|location| location.starting_location?} 
 
 # Initializing controller
 avatar = Avatar.new(lake)

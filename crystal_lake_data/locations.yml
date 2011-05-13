@@ -1,4 +1,5 @@
 -
+  starting_location: true
   handle: lake
   desc: A beautiful lake surrounded by trees.
   info: A trail runs to the north from here.
