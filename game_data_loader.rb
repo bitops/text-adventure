@@ -12,8 +12,7 @@ class GameDataLoader
 
 	def load_initial_state(data)
 		rooms = []
-		handles = data.keys
-		handles.each {|handle|  rooms << build_room(data[handle])  }
+		data.each {|room_data| rooms << build_room(room_data)}
 		rooms
 	end
 
