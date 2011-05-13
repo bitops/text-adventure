@@ -19,7 +19,7 @@ class InputController
 		command = tokens.first
 
 		if command == "go"
-			direction = tokens.last.to_sym
+			direction = tokens.last
 			if avatar.can_move?(direction)
 				avatar.move(direction)
 				@current_message = avatar.location.description

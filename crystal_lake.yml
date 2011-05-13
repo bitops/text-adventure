@@ -1,0 +1,29 @@
+room1:
+  handle: lake
+  desc: A beautiful lake surrounded by trees.
+  info: A trail runs to the north from here.
+  rooms: 
+    north: forest
+
+room2:
+  handle: forest 
+  desc: A forest full of lush trees.
+  info: The path splits. To the west lies your home. To the east are the mountains. Back to the south is a lake.
+  rooms:
+    west: home
+    east: mountains
+    south: lake
+
+room3:
+  handle: home
+  desc: Your home. It is a happy house.
+  info: Your house is here. It is a quiet place. To the east is the path in the forest.
+  rooms:
+    east: forest
+
+room4:
+  handle: mountains
+  desc: These are the mountains. From up here you can see the valley in which you live.
+  info: Further to the east is the pass that leads to the ocean. Back west is the forest.
+  rooms: 
+    west: forest
