@@ -3,12 +3,16 @@ require 'yaml'
 
 class GameDataLoader
 
-	def load_data(file)
+	def load_location_data(file)
 		data = YAML.load_file(file)
 		rooms = load_initial_state(data)
 		establish_relationships(rooms)
 		rooms
   end
+
+	def load_splash_data(file)
+		YAML.load_file(file)["splash"]["message"]
+	end
 
 	def load_initial_state(data)
 		rooms = []

@@ -3,8 +3,12 @@ require File.join(File.dirname(__FILE__), 'room')
 require File.join(File.dirname(__FILE__), 'input_controller')
 require File.join(File.dirname(__FILE__), 'game_data_loader')
 
+location_data_file = File.absolute_path(File.join(File.dirname(__FILE__), "#{ARGV[0]}"))
+
+ARGV.clear
+
 loader = GameDataLoader.new
-locations = loader.load_data('crystal_lake.yml')
+locations = loader.load_location_data(location_data_file)
 lake = locations.find {|location| location.handle == "lake"} 
 
 # Initializing controller
