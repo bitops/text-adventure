@@ -10,8 +10,8 @@ class GameDataLoader
 		rooms
   end
 
-	def load_splash_data(file)
-		YAML.load_file(file)["splash"]["message"]
+	def load_message_data(file)
+		YAML.load_file(file)
 	end
 
 	def load_initial_state(data)

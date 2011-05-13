@@ -5,6 +5,10 @@ class InputController
 		@avatar = avatar
 	end
 
+	def messages=(messages)
+		@messages = messages
+	end
+
 	def initialize_message
 		@current_message = avatar.location.description
 	end
@@ -33,7 +37,7 @@ class InputController
 		end
 		
 		if command == "help"
-			@current_message = help_message
+			@current_message = @messages["help"]
 		end
 
 		if command == "exit" || command == "quit"
@@ -57,15 +61,4 @@ class InputController
 		@commands ||= %w(look exit quit help)
 	end
 
-	def help_message
-		help = <<HELP
-Crystal Lake is a simple adventure.
-
-You can say "look" to get more information about your surroundings.
-
-You can say "go <direction>" to walk somewhere. You can go east, west, north, or south.
-
-You can say "exit" or "quit" to leave the game.
-HELP
-	end
 end

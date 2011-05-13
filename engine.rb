@@ -4,17 +4,20 @@ require File.join(File.dirname(__FILE__), 'input_controller')
 require File.join(File.dirname(__FILE__), 'game_data_loader')
 
 location_data_file = File.absolute_path(File.join(File.dirname(__FILE__), "#{ARGV[0]}"))
+message_data_file = File.absolute_path(File.join(File.dirname(__FILE__), "#{ARGV[1]}"))
 
 ARGV.clear
 
 loader = GameDataLoader.new
 locations = loader.load_location_data(location_data_file)
+messages = loader.load_message_data(message_data_file)
 lake = locations.find {|location| location.handle == "lake"} 
 
 # Initializing controller
-a = Avatar.new(lake)
+avatar = Avatar.new(lake)
 ctl = InputController.new
-ctl.avatar = a
+ctl.messages = messages
+ctl.avatar = avatar
 ctl.initialize_message
 
 def repl(ctl)
@@ -26,14 +29,8 @@ def repl(ctl)
 	repl(ctl)
 end
 
-def print_welcome
-	puts <<WELCOME
-Welcome to Crystal Lake! Have fun and explore. (Type "help" if you get stuck).
-WELCOME
-end
-
-# One off stuff before the game starts
-print_welcome
+# Print splash
+puts messages["splash"]
 # Set up the game loop
 repl(ctl)
 	

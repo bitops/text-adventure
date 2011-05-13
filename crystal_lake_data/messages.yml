@@ -1,4 +1,2 @@
-splash:
-  message: Welcome to Crystal Lake!
-help:
-  message: Type 'look' for more information. You can 'go <direction>' to move around.
+splash: Welcome to Crystal Lake!
+help: Type 'look' for more information. You can 'go <direction>' to move around.
