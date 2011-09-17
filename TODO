@@ -1,0 +1,5 @@
+* add unit tests (minitest from Ruby 1.9)
+* clean up path stuff from the top of the "engine" script. 
+* add an inventory in the game. 
+* add the ability to create and link up worlds.
+* add readline support 
