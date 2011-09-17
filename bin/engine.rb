@@ -1,7 +1,7 @@
-require File.join(File.dirname(__FILE__), '..', 'bin', 'avatar')
-require File.join(File.dirname(__FILE__), '..', 'bin', 'room')
-require File.join(File.dirname(__FILE__), '..', 'bin', 'input_controller')
-require File.join(File.dirname(__FILE__), '..', 'bin', 'game_data_loader')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'avatar')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'room')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'input_controller')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'game_data_loader')
 
 location_data_file = File.absolute_path(File.join(File.dirname(__FILE__), '..', "#{ARGV[0]}"))
 message_data_file = File.absolute_path(File.join(File.dirname(__FILE__), '..', "#{ARGV[1]}"))
