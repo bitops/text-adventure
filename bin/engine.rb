@@ -1,11 +1,14 @@
 require 'readline'
-require File.join(File.dirname(__FILE__), '..', 'lib', 'avatar')
-require File.join(File.dirname(__FILE__), '..', 'lib', 'room')
-require File.join(File.dirname(__FILE__), '..', 'lib', 'input_controller')
-require File.join(File.dirname(__FILE__), '..', 'lib', 'game_data_loader')
 
-location_data_file = File.absolute_path(File.join(File.dirname(__FILE__), '..', "#{ARGV[0]}"))
-message_data_file = File.absolute_path(File.join(File.dirname(__FILE__), '..', "#{ARGV[1]}"))
+GAME_ROOT = File.expand_path(File.join(File.dirname(__FILE__), ".."))
+
+require File.join(GAME_ROOT, 'lib', 'avatar')
+require File.join(GAME_ROOT, 'lib', 'room')
+require File.join(GAME_ROOT, 'lib', 'input_controller')
+require File.join(GAME_ROOT, 'lib', 'game_data_loader')
+
+location_data_file = File.absolute_path(File.join(GAME_ROOT, "#{ARGV[0]}"))
+message_data_file = File.absolute_path(File.join(GAME_ROOT, "#{ARGV[1]}"))
 
 ARGV.clear
 
