@@ -1,3 +1,4 @@
+require 'readline'
 require File.join(File.dirname(__FILE__), '..', 'lib', 'avatar')
 require File.join(File.dirname(__FILE__), '..', 'lib', 'room')
 require File.join(File.dirname(__FILE__), '..', 'lib', 'input_controller')
@@ -23,8 +24,7 @@ ctl.initialize_message
 def repl(ctl)
 	puts ctl.current_message
 	puts 
-	print "> "
-	input = gets.chomp
+	input = Readline.readline('> ', true)
 	ctl.evaluate(input)
 	repl(ctl)
 end
