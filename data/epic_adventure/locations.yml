@@ -25,3 +25,17 @@
   info: Further to the east is the pass that leads to the ocean. Back west is the forest.
   rooms: 
     west: forest
+    east: pass
+-
+  handle: pass
+  desc: This is the pass that leads to the ocean. It is rocky terrain with huge stone walls all around.
+  info: To the east is the ocean. Back west lies the mountains. You can smell the ocean.
+  rooms: 
+    west: mountains
+    east: ocean
+-
+  handle: ocean 
+  desc: You are standing by the ocean. It is overcast and cloudy here. Seagulls circle overhead.
+  info: Further east along the beach you can see some buildings. Back to the west lies the pass.
+  rooms: 
+    west: pass
