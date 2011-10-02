@@ -4,14 +4,14 @@ require 'yaml'
 class GameDataLoader
 
 	def load_location_data(file)
-		data = YAML.load_file(file)
+		data = load_data_from(file)
 		rooms = load_initial_state(data)
 		establish_relationships(rooms)
 		rooms
   end
 
 	def load_message_data(file)
-		YAML.load_file(file)
+		load_data_from(file)
 	end
 
 	def load_initial_state(data)
@@ -41,6 +41,10 @@ class GameDataLoader
 	private
 	def get_room
     Room.new
+	end
+	
+	def load_data_from(file)
+	  YAML.load_file(file)
 	end
 
 end
