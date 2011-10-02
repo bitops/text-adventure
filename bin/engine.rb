@@ -18,6 +18,7 @@ class Engine
     @ctl = InputController.new
     locations = @loader.load_location_data(location_data_file)
     @messages = @loader.load_message_data(message_data_file)
+    @splash_message = @messages["splash"]
     starting_location = locations.find {|location| location.starting_location?}
     # Initializing controller
     avatar = Avatar.new(starting_location)
@@ -36,7 +37,7 @@ class Engine
   
   def start
     # Print splash message
-    puts @messages["splash"]
+    puts @splash_message
     # Start the game loop
     repl
   end
