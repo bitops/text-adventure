@@ -1,2 +1,3 @@
 * add an inventory in the game. 
 * add a real grammar for parsing commands
+* clean up the engine! it's embarrassing in there.
