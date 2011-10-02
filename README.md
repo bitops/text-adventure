@@ -1,12 +1,19 @@
+Text Adventures!
+
 ## About
 
-This is a text game and engine that I am writing just for fun. I loved playing Kings Quest when I was a kid 
-and text adventures harken back to those days for me.
+This is a text game and engine that I am writing just for fun. And to learn more about the basics of game programming. I loved 
+playing games like Kings Quest when I was a kid and text adventures harken back to those days for me. 
 
-I'm going to continue updating the data files so that the story gets bigger and bigger. But if you have an 
-idea, feel free to contribute it. 
+Text games also remind me of a book I borrowed when I was a kid. It was a thick book full of BASIC code that you would type
+in to the computer and then run it. When you ran the code, you had a full game! That was REAL open source because you had
+to make the effort to type all 25 or 50 pages of code in, while the editor was hot. Makes you grateful for how far
+we've come since then. :)
 
-This project is all about fun so I'm always open to ideas.
+I'm going to continue updating the data files for the "Epic Adventure" so that the story gets bigger and bigger. But if 
+you play the game, happen to like it, and have an idea, please feel free to contribute it. 
+
+This project is all about fun so I'm always open to new ideas.
 
 ## License
 
