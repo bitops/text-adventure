@@ -42,10 +42,14 @@ class Engine
   def repl
   	puts @ctl.current_message
   	puts 
-  	input = Readline.readline('> ', true)
+  	input = read_line
   	@ctl.evaluate(input)
   	repl
   end  
+  
+  def read_line
+    Readline.readline('> ', true)
+  end
   
   def start
     # Print splash message
