@@ -12,28 +12,36 @@ message_data_file = File.absolute_path(File.join(GAME_ROOT, "#{ARGV[1]}"))
 
 ARGV.clear
 
-loader = GameDataLoader.new
-locations = loader.load_location_data(location_data_file)
-messages = loader.load_message_data(message_data_file)
-starting_location = locations.find {|location| location.starting_location?} 
+class Engine
+  def initialize(location_data_file, message_data_file)
+    @loader = GameDataLoader.new
+    @ctl = InputController.new
+    locations = @loader.load_location_data(location_data_file)
+    @messages = @loader.load_message_data(message_data_file)
+    starting_location = locations.find {|location| location.starting_location?}
+    # Initializing controller
+    avatar = Avatar.new(starting_location)
+    @ctl.messages = @messages
+    @ctl.avatar = avatar
+    @ctl.initialize_message
+  end
 
-# Initializing controller
-avatar = Avatar.new(starting_location)
-ctl = InputController.new
-ctl.messages = messages
-ctl.avatar = avatar
-ctl.initialize_message
-
-def repl(ctl)
-	puts ctl.current_message
-	puts 
-	input = Readline.readline('> ', true)
-	ctl.evaluate(input)
-	repl(ctl)
+  def repl
+  	puts @ctl.current_message
+  	puts 
+  	input = Readline.readline('> ', true)
+  	@ctl.evaluate(input)
+  	repl
+  end  
+  
+  def start
+    # Print splash message
+    puts @messages["splash"]
+    # Start the game loop
+    repl
+  end
+  
 end
 
-# Print splash
-puts messages["splash"]
-# Set up the game loop
-repl(ctl)
-	
+# main
+Engine.new(location_data_file, message_data_file).start
