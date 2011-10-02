@@ -29,13 +29,18 @@ class GameDataLoader
 	end
 
 	def build_room(room_data)
-		room = Room.new
+		room = get_room
 		room.handle = room_data["handle"] 
 		room.description = room_data["desc"]
 		room.info = room_data["info"]
 		room.rooms = room_data["rooms"]
 		room.starting_location = room_data["starting_location"]
 		room
+	end
+	
+	private
+	def get_room
+    Room.new
 	end
 
 end
