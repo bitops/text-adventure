@@ -16,9 +16,23 @@
 -
   handle: home
   desc: Your home. It is a happy house.
-  info: Your house is here. It is a quiet place. To the east is the path in the forest.
+  info: Your house is here. It is a quiet place. To the east is the path in the forest. If you go west you will enter your house.
   rooms:
     east: forest
+    west: home_main
+-
+  handle: home_main
+  desc: You are standing in the main room of your house. 
+  info: The inside of your house is simple but clean and quiet. You have spent many happy hours here. The study is in the north room.
+  rooms:
+    north: home_study
+    east: home
+-
+  handle: home_study
+  desc: You are in your study. It is a clean room with a desk and windows facing outside.
+  info: Your study is where your work gets done. There is a letter on your desk.
+  rooms:
+    south: home_main
 -
   handle: mountains
   desc: These are the mountains. From up here you can see the valley in which you live.

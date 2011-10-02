@@ -3,3 +3,4 @@
 * add the ability to create and link up worlds. (loading model, not really applicable yet)
 * add NPCs
 * add a magic system
+* add a real grammar for parsing commands
