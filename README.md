@@ -18,5 +18,6 @@ This project is all about fun so I'm always open to new ideas.
 ## License
 
 THE BEER-WARE LICENSE (credit phk)
+
 Sebastian Wittenkamp wrote this program. As long as you retain this notice you can do whatever you want 
 with this code. If we meet some day, and you think this stuff is worth it, you can buy me a beer in return.
