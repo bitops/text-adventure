@@ -53,3 +53,11 @@
   info: Further east along the beach you can see some buildings. Back to the west lies the pass.
   rooms: 
     west: pass
+    east: village
+-
+  handle: village
+  desc: You are standing among the buildings of an abandoned village. 
+  info: There is a strange glowing crystal lying on the ground. 
+  rooms:
+    west: ocean
+
