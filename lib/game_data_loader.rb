@@ -25,24 +25,24 @@ class GameDataLoader
 			room.rooms.each do |direction, handle|
 				room.rooms[direction] = all_rooms.find {|r| r.handle == handle}
 			end
-		end	
+		end
 	end
 
 	def build_room(room_data)
 		room = get_room
-		room.handle = room_data["handle"] 
-		room.description = room_data["desc"]
-		room.info = room_data["info"]
-		room.rooms = room_data["rooms"]
+		room.handle            = room_data["handle"]
+		room.description       = room_data["desc"]
+		room.info              = room_data["info"]
+		room.rooms             = room_data["rooms"]
 		room.starting_location = room_data["starting_location"]
 		room
 	end
-	
+
 	private
 	def get_room
     Room.new
 	end
-	
+
 	def load_data_from(file)
 	  YAML.load_file(file)
 	end
