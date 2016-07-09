@@ -1,4 +1,14 @@
-* add an inventory in the game. 
-* add a real grammar for parsing commands
-* state machine for NPC interaction
+Short Term:
+* come up with a data model and database schema
+* convert existing game to information stored in a database
+* write an installation script so you can run multiple instances of the game. this is like a "poor mans" save state.
+
+Medium Term:
+* add an inventory system in the game. rooms knows what stuff they have in them. when you pick up an item in a room it's added to your inventory. you can examine items in your inventory.
+* develop a simple map system so you know where you are. only explored areas should be shown. bonus point for some kind of neat ASCII graphical thing-a-ma-jig.
+* finish the current story so that there's a full game to play through. a nice simple storyline.
+
+Long Term:
+* state machine for world changes
 * level editor
+* add a real grammar for parsing commands
