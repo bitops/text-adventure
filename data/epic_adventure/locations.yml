@@ -58,6 +58,7 @@
   handle: village
   desc: You are standing among the buildings of an abandoned village. 
   info: There is a strange glowing crystal lying on the ground. 
+  items: crystal
   rooms:
     west: ocean
 
