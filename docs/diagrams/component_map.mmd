@@ -1,0 +1,15 @@
+graph TD
+    A[bin/game_player.rb] --> B[Bootstrap]
+    B -->|builds controller| C[Game]
+    C -->|starts| D[Engine]
+    D -->|delegates input| E[InputController]
+    E -->|moves avatar| F[Avatar]
+    F -->|occupies| G[Room]
+    B -->|loads| H[(locations.yml)]
+    B -->|loads| I[(messages.yml)]
+    H --> G
+    I --> E
+    E -->|future: manage| J[[Inventory System]]
+    J -->|consumes| K[(items.yml)]
+    G -->|future: persist| L[[Room State Tracker]]
+    L --> G

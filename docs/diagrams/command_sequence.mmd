@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant P as Player
+    participant R as Readline
+    participant E as Engine
+    participant C as InputController
+    participant A as Avatar
+    participant RM as Room
+
+    P->>R: type "go north"
+    R->>E: returns input string
+    E->>C: evaluate("go north")
+    C->>C: validate tokens
+    alt invalid command
+        C->>E: set error message
+    else direction allowed
+        C->>A: can_move?("north")
+        alt room exists
+            A->>A: move to adjacent room
+            A->>RM: update current room reference
+            C->>E: update message with new description
+            Note over C,A: future inventory hooks adjust items
+            Note over RM: future room state changes descriptions
+        else blocked path
+            C->>E: message "cannot go north"
+        end
+    end
+    E->>P: print current message
