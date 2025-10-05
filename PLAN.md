@@ -1,0 +1,27 @@
+# Implementation Plan for Repository Scaffolding
+
+- Review existing codebase context
+  - Re-read core Ruby files under `lib/` to verify recent changes
+  - Inspect YAML data in `data/epic_adventure/` for locations, messages, items
+  - Confirm available scripts/tests (`play.sh`, `Rakefile`, `tests/`)
+- Draft `AGENTS.md`
+  - Define multi-agent roles (Planner, Ruby Implementer, Data Curator, QA/Test Runner)
+  - Map responsibilities to key files and hand-offs
+  - Capture workflow checklist with commands (`rake test`, `ruby play.sh`)
+  - Document constraints including ASCII files, YAML reliance, parser limits, inventory/state requirements
+- Author `docs/architecture.md`
+  - Write system overview describing current flow and future inventory/state goals
+  - Detail data loading and room relationship resolution
+  - Highlight limitations and TODO-aligned extension points
+  - Embed Mermaid diagrams referencing generated `.mmd` files
+- Produce Mermaid sources in `docs/diagrams/`
+  - Create `component_map.mmd` illustrating runtime component relationships and planned inventory/state hooks
+  - Create `command_sequence.mmd` showing `go north` command path with inventory/state touchpoints
+- Compose `docs/development.md`
+  - Summarize environment setup, testing commands, and lint expectations
+  - Explain data directory layout and safe updates for rooms/messages/items/inventory
+  - Define working agreements for code style and testing inventory/state changes
+- Cross-file validation
+  - Ensure Markdown links, diagram references, and instructions stay consistent
+  - Proofread for accuracy against current code/data
+  - Verify all files remain ASCII and reference correct relative paths
