@@ -3,3 +3,8 @@ handle: crystal
 name: Glowing Crystal
 description: This crystal glows with an eerie light.
 -
+-
+handle: letter
+name: Letter
+description: A letter from mountain library of Ezki.
+-

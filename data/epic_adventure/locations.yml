@@ -3,10 +3,10 @@
   handle: lake
   desc: A beautiful lake surrounded by trees.
   info: A trail runs to the north from here.
-  rooms: 
+  rooms:
     north: forest
 -
-  handle: forest 
+  handle: forest
   desc: A forest full of lush trees.
   info: The path splits. To the west lies your home. To the east are the mountains. Back to the south is a lake.
   rooms:
@@ -22,7 +22,7 @@
     west: home_main
 -
   handle: home_main
-  desc: You are standing in the main room of your house. 
+  desc: You are standing in the main room of your house.
   info: The inside of your house is simple but clean and quiet. You have spent many happy hours here. The study is in the north room.
   rooms:
     north: home_study
@@ -31,34 +31,37 @@
   handle: home_study
   desc: You are in your study. It is a clean room with a desk and windows facing outside.
   info: Your study is where your work gets done. There is a letter on your desk.
+  items:
+  - letter
   rooms:
     south: home_main
 -
   handle: mountains
   desc: These are the mountains. From up here you can see the valley in which you live.
   info: Further to the east is the pass that leads to the ocean. Back west is the forest.
-  rooms: 
+  rooms:
     west: forest
     east: pass
 -
   handle: pass
   desc: This is the pass that leads to the ocean. It is rocky terrain with huge stone walls all around.
   info: To the east is the ocean. Back west lies the mountains. You can smell the ocean.
-  rooms: 
+  rooms:
     west: mountains
     east: ocean
 -
-  handle: ocean 
+  handle: ocean
   desc: You are standing by the ocean. It is overcast and cloudy here. Seagulls circle overhead.
   info: Further east along the beach you can see some buildings. Back to the west lies the pass.
-  rooms: 
+  rooms:
     west: pass
     east: village
 -
   handle: village
-  desc: You are standing among the buildings of an abandoned village. 
-  info: There is a strange glowing crystal lying on the ground. 
-  items: crystal
+  desc: You are standing among the buildings of an abandoned village.
+  info: There is a strange glowing crystal lying on the ground.
+  items:
+    - crystal
   rooms:
     west: ocean
 
